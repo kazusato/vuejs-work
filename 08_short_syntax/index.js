@@ -1,4 +1,4 @@
-'use_strict';
+'use strict';
 
 Vue.component('message-box', {
     props: ['message'],

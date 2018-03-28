@@ -1,4 +1,4 @@
-'use_strict';
+'use strict';
 
 Vue.component('todo-list', {
     props: ['todo'],

@@ -1,4 +1,4 @@
-'use_strict';
+'use strict';
 
 var app2 = new Vue({
     el: '#app-2',
