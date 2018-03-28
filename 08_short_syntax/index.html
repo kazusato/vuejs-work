@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>hello user input world</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+<div id="app">
+    <button @click="showMessage">メッセージを表示</button>
+    <message-box v-for="msg in messageList" :message="msg" :key="msg.id"></message-box>
+</div>
+<script src="index.js"></script>
+</body>
+</html>
