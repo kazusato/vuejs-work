@@ -5,7 +5,9 @@ const vm = new Vue({
     data: {
         lastName: '',
         firstName: '',
-        fullName: ''
+        fullName: '',
+        prefName: '',
+        cityName: ''
     },
     watch: {
         lastName: function (val) {
@@ -13,6 +15,11 @@ const vm = new Vue({
         },
         firstName: function (val) {
             this.fullName = this.lastName + ' ' + val;
+        }
+    },
+    computed: {
+        address: function () {
+            return this.prefName + this.cityName;
         }
     }
 });
