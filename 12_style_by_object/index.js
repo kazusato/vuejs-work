@@ -6,6 +6,9 @@ const vm = new Vue({
         bigTextStyle: {
             color: 'blue',
             fontSize: '48px'
+        },
+        redTextStyle: {
+            color: 'red'
         }
     }
 });

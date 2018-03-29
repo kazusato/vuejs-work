@@ -3,11 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <title>style by object</title>
+    <link rel="stylesheet" href="main.css">
     <script src="https://unpkg.com/vue"></script>
 </head>
 <body>
 <div id="app">
-    <span v-bind:style="bigTextStyle">こんにちは、世界!</span>
+    <h1>オブジェクトによるスタイル適用</h1>
+    <p>
+        <span v-bind:style="bigTextStyle">こんにちは、世界!</span><br>
+        文字色「青」、フォントサイズ「48px」が適用されています。
+    </p>
+    <p>
+        <span v-bind:style="[bigTextStyle, redTextStyle]">こんにちは、世界!</span><br>
+        文字色「青」、フォントサイズ「48px」に、文字色「赤」が上書き適用されています。
+    </p>
+    <p>
+        <span v-bind:style="[redTextStyle, bigTextStyle]">こんにちは、世界!</span><br>
+        文字色「赤」に、文字色「青」、フォントサイズ「48px」が上書き適用されています。
+    </p>
+
+    <h1>CSSによるスタイル適用</h1>
+    <p>
+        <span class="bigText">こんにちは、世界!</span><br>
+        文字色「青」、フォントサイズ「48px」が適用されています。
+    </p>
+    <p>
+        <span class="bigText redText">こんにちは、世界!</span><br>
+        class属性では、bigText（文字色「青」、フォントサイズ「48px」）→redText（文字色「赤」）の順に指定します。
+        CSSでも、同じ順序でクラスが定義されています。
+    </p>
+    <p>
+        <span class="redText bigText">こんにちは、世界!</span><br>
+        class属性の指定順をredText→bigTextにしました。CSSでの定義順はbigText→redTextです。
+        class属性の指定順で上書かれるのではなく、CSSでの定義順で後のものが優先されて適用されています。
+    </p>
 </div>
 <script src="index.js"></script>
 </body>
