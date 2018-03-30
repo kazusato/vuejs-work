@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Class binding</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+<div id="app">
+    <h1>エラー時は赤字で表示</h1>
+    <p>
+        <span v-bind:class="{error: isError}">名前を入力してください。</span>
+    </p>
+</div>
+<script src="index.js"></script>
+</body>
+</html>
