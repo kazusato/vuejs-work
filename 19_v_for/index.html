@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>v-for</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+<div id="app">
+    <h1>範囲つきv-for</h1>
+    <ul>
+        <li v-for="n in 10">
+            {{n}}
+        </li>
+    </ul>
+    <h1>v-for in template</h1>
+    <template v-for="item in items">
+        <dt>{{item.key}}</dt>
+        <dd>{{item.value}}</dd>
+    </template>
+    <h1>v-for/v-if mixture</h1>
+    <template v-for="item in items" v-if="item.public">
+        <dt>{{item.key}}</dt>
+        <dd>{{item.value}}</dd>
+    </template>
+</div>
+<script src="index.js"></script>
+</body>
+</html>
