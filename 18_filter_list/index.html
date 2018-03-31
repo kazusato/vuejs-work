@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>big array</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+<div id="app">
+    <h1>元データを維持したリスト操作</h1>
+    <div>
+        <label for="filter_regex_field">正規表現にマッチするものを表示: </label>
+        <input id="filter_regex_field" type="text" v-model="filterRegexp">
+        <button @click="revert">元に戻す</button>
+    </div>
+    <ul id="filter_regex_list">
+        <li v-for="item in filteredItems">
+            {{item.message}}
+        </li>
+    </ul>
+
+</div>
+<script src="index.js"></script>
+</body>
+</html>
