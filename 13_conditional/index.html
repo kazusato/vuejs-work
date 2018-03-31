@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>conditional</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+<div id="app">
+    <h1>ラジオボタンの選択によって表示文言を変えます</h1>
+    <div class="radio_status">
+        <input type="radio" id="msg_radio_yes" value="yes" v-model="radioStatus">
+        <label for="msg_radio_yes" class="radio_yes">YES</label>
+        <input type="radio" id="msg_radio_no" class="radio_no" value="no" v-model="radioStatus">
+        <label for="msg_radio_no" class="radio_no">NO</label>
+    </div>
+    <div class="msg">
+        <div class="msg_yes" v-if="radioStatus === 'yes'">
+            <h2>メッセージ</h2>
+            <p>
+                ラジオボタンは「Yes」が選択されています。
+            </p>
+        </div>
+        <div class="msg_no" v-else>
+            <h2>メッセージ</h2>
+            <p>
+                ラジオボタンは「No」が選択されています。
+            </p>
+        </div>
+    </div>
+</div>
+<script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+.msg {
+    clear: left;
+    margin-top: 5em;
+}
+
+.msg_yes {
+    color: forestgreen;
+}
+
+.msg_no {
+    color: darkred;
+}
+
+/* Radio button with CSS: http://weboook.blog22.fc2.com/blog-entry-379.html */
+.radio_status input {
+    display: none;
+}
+
+.radio_status label {
+    display: block;
+    float: left;
+    cursor: pointer;
+    width: 60px;
+    margin: 0;
+    padding: 10px;
+    background: #bdc3c7;
+    color: #869198;
+    font-size: 16px;
+    text-align: center;
+    line-height: 1;
+    transition: .2s;
+}
+
+.radio_status label:first-of-type {
+    border-radius: 3px 0 0 3px;
+}
+
+.radio_status label:last-of-type {
+    border-radius: 0 3px 3px 0;
+}
+
+.radio_status input[type="radio"]:checked + .radio_yes {
+    background-color: forestgreen;
+    color: #fff;
+}
+
+.radio_status input[type="radio"]:checked + .radio_no {
+    background-color: darkred;
+    color: #fff;
+}
+
