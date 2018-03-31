@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>modify array</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+<div id="app">
+    <h1>配列要素の変更</h1>
+    <div>
+        <label for="direct_mod_direct_field">直接編集（反映されない）: </label>
+        <input id="direct_mod_direct_field" type="text" v-model="modStrDirect">
+        <button @click="modifyDirect">変更</button>
+        <button @click="revertDirect">元に戻す</button>
+    </div>
+    <div>
+        <label for="direct_mod_vue_field">Vue経由編集（反映される）: </label>
+        <input id="direct_mod_vue_field" type="text" v-model="modStrVue">
+        <button @click="modifyVue">変更</button>
+        <button @click="revertVue">元に戻す</button>
+    </div>
+    <ul id="modify_array_list">
+        <li v-for="item in items">
+            {{item.message}}
+        </li>
+    </ul>
+
+</div>
+<script src="index.js"></script>
+</body>
+</html>
