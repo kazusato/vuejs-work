@@ -8,6 +8,41 @@
 </head>
 <body>
 <div id="app">
+    <h1>まずはシンプルなリスト</h1>
+    <ul id="simple-list">
+        <li v-for="item in items">
+            {{item.message}}
+        </li>
+    </ul>
+    <h1>項番や親プロパティも一緒に取得する</h1>
+    <ul id="list-with-index">
+        <li v-for="(item, index) in items">
+            [{{index}}] {{commonMessage}} => {{item.message}}
+        </li>
+    </ul>
+    <h1>オブジェクトのプロパティ</h1>
+    <h2>値のみ取得</h2>
+    <ul id="object-properties">
+        <li v-for="value in flight">
+            {{value}}
+        </li>
+    </ul>
+    <h2>インデックスとキーも取得</h2>
+    <ul id="object-properties-ordered">
+        <li v-for="(value, key, index) in flight">
+            [{{index}}] {{key}} => {{value}}
+        </li>
+    </ul>
+
+    <h1>動的に要素を追加</h1>
+    <label for="new_msg_field">メッセージを追加: </label>
+    <input id="new_msg_field" type="text" v-model="newMessage">
+    <button @click="addMessage">追加</button>
+    <ul id="object-properties-new">
+        <li v-for="item in items">
+            {{item.message}}
+        </li>
+    </ul>
 
 </div>
 <script src="index.js"></script>
