@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>modify object</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+<div id="app">
+    <h1>オブジェクトへのプロパティの追加</h1>
+    <div>
+        <label for="add_prop_field">キー: </label>
+        <input id="add_prop_field" type="text" v-model="propKey">
+        <label for="add_prop_value_field">値: </label>
+        <input id="add_prop_value_field" type="text" v-model="propValue">
+        <button @click="addProp">追加</button>
+    </div>
+    <div>
+        <label for="replace_obj_direct">オブジェクトの入れ替え（直接）</label>
+        <button id="replace_obj_direct" @click="replaceObjectDirect">入れ替え</button>
+    </div>
+    <div>
+        <label for="replace_obj_vue">オブジェクトの入れ替え（Vue）</label>
+        <button id="replace_obj_vue" @click="replaceObjectVue">入れ替え</button>
+    </div>
+    <dt>flightNumber</dt><dd>{{flight.flightNumber}}</dd>
+    <dt>departureDate</dt><dd>{{flight.departureDate}}</dd>
+    <dt>departureTime</dt><dd>{{flight.departureTime}}</dd>
+    <dt>departureAirport</dt><dd>{{flight.departureAirport}}</dd>
+    <dt>arrivalDate</dt><dd>{{flight.arrivalDate}}</dd>
+    <dt>arrivalTime</dt><dd>{{flight.arrivalTime}}</dd>
+    <dt>arrivalAirport</dt><dd>{{flight.arrivalAirport}}</dd>
+    <dt>updateDateTime</dt><dd>{{flight.updateDateTime}}</dd>
+    <dt>test1</dt><dd>{{flight.test1}}</dd>
+    <dt>test2</dt><dd>{{flight.test2}}</dd>
+    <dt>test3</dt><dd>{{flight.test3}}</dd>
+    <dt>test4</dt><dd>{{flight.test4}}</dd>
+    <dt>test5</dt><dd>{{flight.test5}}</dd>
+
+</div>
+<script src="index.js"></script>
+</body>
+</html>
