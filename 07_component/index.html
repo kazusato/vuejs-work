@@ -7,8 +7,13 @@
 </head>
 <body>
 <div id="app-7">
+    <h1>コンポーネントを直接配置</h1>
     <ol>
         <todo-list v-for="item in groceryList" v-bind:todo="item" v-bind:key="item.id"></todo-list>
+    </ol>
+    <h1>isを使ってコンポーネントを配置</h1>
+    <ol>
+        <li is="todo-list" v-for="item in groceryList" v-bind:todo="item" v-bind:key="item.id"></li>
     </ol>
 </div>
 <script src="index.js"></script>
