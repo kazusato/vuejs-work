@@ -11,6 +11,10 @@
     color: darkred;
 }
 
+.msg_footer {
+    font-size: 0.7em;
+}
+
 /* Radio button with CSS: http://weboook.blog22.fc2.com/blog-entry-379.html */
 .radio_status input {
     display: none;
@@ -47,5 +51,21 @@
 .radio_status input[type="radio"]:checked + .radio_no {
     background-color: darkred;
     color: #fff;
+}
+
+.login_identity_label {
+    display: block;
+    float: left;
+    width: 130px;
+    color: red;
+}
+
+.login_identity {
+    clear: left;
+    width: 20em;
+}
+
+.toggle_login_type {
+    width: 200px;
 }
 

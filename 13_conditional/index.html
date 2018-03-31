@@ -29,6 +29,41 @@
             </p>
         </div>
     </div>
+    <div class="msg_footer">
+        <span v-show="radioStatus === 'no'">
+            「No」が選択された場合のみ、このフッターメッセージが表示されます。
+        </span>
+    </div>
+
+    <h1>ボタンでログインタイプを切り替えます</h1>
+    <div class="login">
+        <h2>切り替えても入力した文字列が残る場合</h2>
+        <div class="input_login_identity">
+            <template v-if="loginType === 'username'">
+                <label for="login_identity_username" class="login_identity_label">ユーザー名: </label>
+                <input id="login_identity_username" class="login_identity" placeholder="ユーザー名を入力してください">
+            </template>
+            <template v-else>
+                <label for="login_identity_email" class="login_identity_label">メールアドレス: </label>
+                <input id="login_identity_email" class="login_identity" placeholder="メールアドレスを入力してください">
+            </template>
+            <button class="toggle_login_type" @click="toggleLoginType">{{toggleText}}</button>
+        </div>
+        <h2>切り替えると入力した文字列が残らない場合</h2>
+        <div class="input_login_identity">
+            <template v-if="loginType2 === 'username'">
+                <label for="login_identity_username2" class="login_identity_label">ユーザー名: </label>
+                <input id="login_identity_username2" class="login_identity" placeholder="ユーザー名を入力してください"
+                       key="login_type_username">
+            </template>
+            <template v-else>
+                <label for="login_identity_email2" class="login_identity_label">メールアドレス: </label>
+                <input id="login_identity_email2" class="login_identity" placeholder="メールアドレスを入力してください"
+                       key="login_type_email">
+            </template>
+            <button class="toggle_login_type" @click="toggleLoginType2">{{toggleText2}}</button>
+        </div>
+    </div>
 </div>
 <script src="index.js"></script>
 </body>
