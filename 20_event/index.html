@@ -15,6 +15,80 @@
     <div class="message-box">
         <span>{{message}}</span>
     </div>
+
+    <h1>イベントの伝播と抑止</h1>
+    <h2>イベント修飾子を使わないケース</h2>
+    <h3>複数階層のdiv（伝播抑止なし）</h3>
+    <div class="outer" @click="clickDiv1">
+        <div class="mid" @click="clickDiv2">
+            <div class="inner" @click="clickDiv3">
+                こんにちは、世界!
+            </div>
+        </div>
+    </div>
+    <h3>複数階層のdiv（伝播抑止あり）</h3>
+    <div class="outer" @click="clickDiv1">
+        <div class="mid" @click="clickDiv2">
+            <div class="inner" @click="clickDiv3WithStop($event)">
+                こんにちは、世界!
+            </div>
+        </div>
+    </div>
+    <h3>divとresetボタンの混在（伝播抑止なし・デフォルト抑止なし）</h3>
+    <div class="outer" @click="clickDiv1">
+        <div class="mid" @click="clickDiv2">
+            <div class="inner" @click="clickDiv3">
+                <form>
+                    <input type="text" v-model="message">
+                    <input type="reset" @click="clickReset" value="リセット">
+                </form>
+            </div>
+        </div>
+    </div>
+    <h3>divとresetボタンの混在（伝播抑止あり・デフォルト抑止なし）</h3>
+    <div class="outer" @click="clickDiv1">
+        <div class="mid" @click="clickDiv2">
+            <div class="inner" @click="clickDiv3">
+                <form>
+                    <input type="text" v-model="message">
+                    <input type="reset" @click="clickResetWithStop($event)" value="リセット">
+                </form>
+            </div>
+        </div>
+    </div>
+    <h3>divとresetボタンの混在（伝播抑止なし・デフォルト抑止あり）</h3>
+    <div class="outer" @click="clickDiv1">
+        <div class="mid" @click="clickDiv2">
+            <div class="inner" @click="clickDiv3">
+                <form>
+                    <input type="text" v-model="message">
+                    <input type="reset" @click="clickResetWithPreventDefault($event)" value="リセット">
+                </form>
+            </div>
+        </div>
+    </div>
+    <h3>divとresetボタンの混在（伝播抑止あり・デフォルト抑止あり）</h3>
+    <div class="outer" @click="clickDiv1">
+        <div class="mid" @click="clickDiv2">
+            <div class="inner" @click="clickDiv3">
+                <form>
+                    <input type="text" v-model="message">
+                    <input type="reset" @click="clickResetWithStopAndPreventDefault($event)" value="リセット">
+                </form>
+            </div>
+        </div>
+    </div>
+    <h2>イベント修飾子を使うケース</h2>
+    <div class="outer" @click="clickDiv1">
+        <div class="mid" @click="clickDiv2">
+            <div class="inner" @click="clickDiv3">
+                <form>
+                    <input type="text" v-model="message">
+                    <input type="reset" @click.stop.prevent="clickReset" value="リセット">
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
 <script src="index.js"></script>
 </body>
