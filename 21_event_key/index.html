@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>event key</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+<div id="app">
+    <h1>Enterキーでsubmit（ボタン押下も可）</h1>
+    <div>
+        <label for="lastname_field">姓: </label>
+        <input id="lastname_field" @keyup.enter="submit" v-model="lastname"><br>
+        <label for="firstname_field">名: </label>
+        <input id="firstname_field" @keyup.enter="submit" v-model="firstname"><br>
+        <button @click="submit">送信</button>
+    </div>
+    <div>
+        <span>{{message}}</span>
+    </div>
+
+    <h1>Shift+Enterキーでsubmit（ボタン押下もShift要）</h1>
+    <div>
+        <label for="lastname_shift_field">姓: </label>
+        <input id="lastname_shift_field" @keyup.shift.enter="submitShift" v-model="lastnameShift"><br>
+        <label for="firstname_shift_field">名: </label>
+        <input id="firstname_shift_field" @keyup.shift.enter="submitShift" v-model="firstnameShift"><br>
+        <button @click.shift="submitShift">送信</button>
+    </div>
+    <div>
+        <span>{{messageShift}}</span>
+    </div>
+</div>
+<script src="index.js"></script>
+</body>
+</html>
